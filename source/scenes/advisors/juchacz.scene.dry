@@ -10,8 +10,8 @@ new-page: true
 Juchacz is the founder of the Worker's Welfare, our mutual aid organization; her experiences as a single mother in poverty led her to socialism. She is the most senior woman among the SPD leadership, who is often treated as the "go-to" when the predominantly male leadership sought out womens' voices.
 
 - @nazi_urgency
-- @welfare
-- @organizing_women
+- @youth
+- @media
 - @root: Return to main
 
 
@@ -24,22 +24,33 @@ on-arrival: advisor_action_timer = 6; nazi_urgency += 1; rb_militancy += 0.01 if
 
 We have begun a propaganda campaign to warn our members away from the <span style="color: #7A3C00;">Nazis</span>.
 
-@welfare
-title: Support Workers' Welfare, our mutual aid organization.
+@youth
+choose-if: resources > 0
+unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-choose-if: resources > 0 and advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 0: Not enough resources. ?]
-on-arrival: resources -= 1; workers_aid += 1; unemployed_spd += 5*(1 - dissent); workers_spd += 3*(1-dissent); workers_spd += 2*(1-dissent) if black_thursday_seen; advisor_action_timer = 6;
+view-if: not rb_explode
+on-arrival: resources -= 1; rb_strength += 50; rb_militancy += 0.02; left_labor_strength += 5; 
 
-We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
+Our new youth members flock to the left labor wing of the party and the Reichsbanner.
 
-@organizing_women
-title: Organizing women
-subtitle: Juchacz's strategies are aimed at more "traditional" women.
+
+@media_
+title: Media
+subtitle: Manage our party's newspapers and media.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: womens_rights += 1; workers_spd += 4*(1-dissent); rural_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); advisor_action_timer = 6
+on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
+go-to: media
 
-Juchacz's strategies for organizing women are aimed at working-class housewives, and acknowledge women's traditional household roles. We argue that our economic welfare programs will improve the livelihoods of women and their families.
+@spd_cooperation
+title: Cooperation with the SPD
+subtitle: Could we build closer ties with the KPD?
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6; left_labor_strength += 2; spd_relation += 4*(1-dissent); right_dissent += 2; right_labor_dissent +=1 
 
-[? if spd_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+Joos works towards closer ties with the SPD through his labor connections.
+
+
+
+
