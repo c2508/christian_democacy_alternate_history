@@ -1,18 +1,27 @@
-title: Fritz Baade
+title: Heinrich Brauns
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/BaadeFritz.jpg
 view-if: baade_advisor = 1
 new-page: true 
 
-= Fritz Baade
+= Heinrich Brauns
 
-Baade is one of the few agricultural experts in the SPD, and an unorthodox economist.
+Brauns has been our labor minister for the past 8 years and is an expert on social policy issues.
 
-- @agriculture
+- @labor_rights_
 - @rural_campaign
 - @depression
 - @root: Return to main
+
+@labor_rights_
+title: Labor Rights
+subtitle: As Labor Minister, Brauns can help set regulations for working conditions.
+choose-if: advisor_action_timer <= 0 and spd_in_government and labor_minister_party = "SPD"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if labor_minister_party != "SPD" : The SPD does not control the Labor Ministry. ?]
+on-arrival: advisor_action_timer = 6; labor_rights_timer -= 10; last_advisor_action = 1
+go-to: labor_rights
+
 
 @agriculture
 title: Agricultural Policy
