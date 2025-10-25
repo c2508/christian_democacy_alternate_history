@@ -10,7 +10,7 @@ view-if: breitscheid_advisor = 1
 Wirth is a former chancellor and figure of the Zentrum's left wing who has been devotedly republican, to the extent of angering his former party members. He is a strong supporter of maintaining democracy and cooperation with the SPD.
 - @spd_cooperation
 - @build_reichsbanner
-- @party_discipline
+- @democratic_rally
 - @snap_election
 - @root: Return to main
 
@@ -19,7 +19,9 @@ title: Cooperation with the SPD
 subtitle: Push the party to be more friendly towards the SPD.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_labor_strength += 5; spd_relation += 5*(1-dissent) right_dissent += 5; left_labor_dissent -= 1
+on-arrival: advisor_action_timer = 6; left_labor_strength += 5; spd_relation += 5*(1-dissent) right_dissent += 5; right_labor_dissent =+3 left_labor_dissent -= 1
+
+Wirth was in the SPD before and is able to use his close ties with SPD members to deepen cooperation between both parties. 
 
 @build_reichsbanner
 title: Reichsbanner
@@ -48,41 +50,7 @@ on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_elec
 We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
 
 
-@breitscheid_international
-title: International Party Relations
-subtitle: Breitscheid is one of our contacts with international socialist parties.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0
-on-arrival: advisor_action_timer = 6; international_relations_timer -= 12; last_advisor_action = 1
-go-to: international_relations
 
-@breitscheid_foreign
-title: Foreign Policy
-subtitle: As Foreign Minister, Breitscheid can set our foreign policy.
-unavailable-subtitle: [? if not spd_in_government: The SPD is not in government. ?] [? if foreign_minister_party != "SPD" : The SPD does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0 and spd_in_government and foreign_minister_party == "SPD"
-on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 8; last_advisor_action = 1
-go-to: foreign_policy
-
-
-@party_discipline
-title: Party Discipline
-subtitle: Reduce dissent across the party.
-choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
-
-We have enforced party discipline to reduce dissent across all factions.
-
-
-@snap_election
-title: Snap Election
-subtitle: Call a snap election.
-unavailable-subtitle: [? if chancellor != "Braun" and president != "Braun" : Braun must be Chancellor or President. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if president = "Braun" and presidential_powers : We have removed this power from the president with a constitutional reform. ?]
-choose-if: advisor_action_timer == 0 and (chancellor == "Braun" or (president == "Braun" and not presidential_powers))
-on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
-
-We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
 
 
 
