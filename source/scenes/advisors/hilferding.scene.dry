@@ -19,7 +19,7 @@ new-page: true
 
 @negotiate_prussian_concordat
 view-if: prussian_concordat_progress < 2 and z_prussia = 1
-on-arrival: prussian_concordat_progress += 1; clerical_strength += 10; left_labor_dissent -= 10; right_labor_dissent -= 10; center_dissent -= 10; right_dissent -= 10; clerical_dissent -= 15
+on-arrival: prussian_concordat_progress += 1; clerical_strength += 8; left_labor_dissent -= 10; right_labor_dissent -= 10; center_dissent -= 10; right_dissent -= 10; clerical_dissent -= 15
 
 We are making progress towards negotiating a concordat between Prussia and the Catholic church.
 
