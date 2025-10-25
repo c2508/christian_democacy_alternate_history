@@ -11,6 +11,7 @@ Adenauer is the Mayor of Cologne and is a strong advocate for leaving the tower.
 
 - @support_peoples_party
 - @build_peoples_party
+-@snap_election
 - @root: Return to main
 
 @support_peoples_party
@@ -31,3 +32,12 @@ choose-if: peoples_party_support >= 3 and advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if peoples_party_support < 3: There is not enough support for this policy within the party. ?]
 on-arrival: advisor_action_timer = 6; left_labor_dissent +=5 ; clerical_dissent +=5
 go-to: peoples_party
+
+@snap_election
+title: Snap Election
+subtitle: Call a snap election.
+unavailable-subtitle: [? if chancellor != "Adenauer" and president != "Adenauer" : Adenauer must be Chancellor or President. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if president = "Braun" and presidential_powers : We have removed this power from the president with a constitutional reform. ?]
+choose-if: advisor_action_timer == 0 and (chancellor == "Adenauer" or (president == "Adenauer" and not presidential_powers))
+on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
+
+We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
