@@ -9,12 +9,23 @@ new-page: true
 
 Stegerwald is the leader of the DGB, the catholic trade union association. 
 
-- @white_collar
+- @organizing_workers
 - @union_unity
-- @crisis
-- @moderate_economic_plan
+- @support_peoples_party
+- @build_peoples_party
+- @campaigning_peoples_party
 - @root: Return to main
 
+
+
+@organizing_workers
+title: Organizing workers
+subtitle: Improve our standing among the workers.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; workers_spd += 4*(1-dissent); workers_spd += 3*(1-dissent) if wtb_adopted == 1; labor_strength += 2;
+
+We have increased our organizing among the workers.
 
 
 @union_unity
@@ -54,5 +65,6 @@ choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6;
 go-to: peoples_party_campaigning
+
 
 
