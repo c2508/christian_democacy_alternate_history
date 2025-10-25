@@ -11,7 +11,6 @@ Juchacz is the founder of the Worker's Welfare, our mutual aid organization; her
 
 - @nazi_urgency
 - @youth
-- @media
 - @spd_cooperation
 - @root: Return to main
 
@@ -34,14 +33,6 @@ on-arrival: resources -= 1; rb_strength += 50; rb_militancy += 0.02; left_labor_
 
 Our new youth members flock to the left labor wing of the party and the Reichsbanner.
 
-
-@media_
-title: Media
-subtitle: Manage our party's newspapers and media.
-choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
-go-to: media
 
 @spd_cooperation
 title: Cooperation with the SPD
