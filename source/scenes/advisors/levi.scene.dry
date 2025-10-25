@@ -1,13 +1,13 @@
-title: Paul Levi
+title: Konrad Adenauer
 is-pinned-card: true
-tags: advisor, left
+tags: advisor, center
 card-image: img/portraits/LeviPaul.jpg
-view-if: levi_advisor = 1
+view-if: adenauer_advisor = 1
 new-page: true 
 
-= Paul Levi
+= Konrad Adenauer
 
-Levi is a former leader of the KPD who left over their devotion to violence and revolutionary adventurism.
+Adenauer is the Mayor of Cologne and is a strong advocate for leaving the tower.
 
 - @building_the_left
 - @kpd_cooperation
