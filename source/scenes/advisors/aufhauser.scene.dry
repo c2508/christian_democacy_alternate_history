@@ -33,13 +33,16 @@ on-arrival: advisor_action_timer = 6; labor_dissent -= 10;
 
 We have reduced tensions with the Labor faction.
 
-@crisis
-title: Addressing the economic crisis
-subtitle: Aufhäuser can help support a left-wing economic program.
-choose-if: advisor_action_timer <= 0 and nationalization_adopted == 0 and black_thursday_seen == 1 and nationalization_support <= 3
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if nationalization_adopted > 0 : We have already adopted the Left plan. ?]
-on-arrival: advisor_action_timer = 6; 
-go-to: crisis_program.support_left 
+
+@support_peoples_party
+title: Build support for a People's Party
+subtitle: Can we expand our party beyond Catholics?
+view-if: peoples_party = 0
+choose-if: peoples_party_support <= 4 and advisor_action_timer = 0 and peoples_party = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if peoples_party_support > 4: There is already substantial support for a People's Party. ?]
+on-arrival: advisor_action_timer = 6; peoples_party_support += 1; reformist_strength += 5;
+
+We are building up support for the idea of a People's Party.
 
 @moderate_economic_plan
 title: Support the reformist economic plan
