@@ -10,8 +10,7 @@ new-page: true
 Stegerwald is the leader of the DGB, the Catholic Trade Union Association. 
 
 - @coalition
-- @organizing_workers
-- @union_unity
+- @prussian_bulwark
 - @support_peoples_party
 - @build_peoples_party
 - @campaigning_peoples_party
@@ -28,6 +27,16 @@ on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_governmen
 
 We have improved our relations with the [? if in_grand_coalition : Center (Zentrum) Party, [+ ddp_name +], and DVP, ?][? if not in_grand_coalition: Center (Zentrum) Party and [+ ddp_name +], ?] and reduced tensions with the coalition.
 
+
+@prussian_bulwark
+title: The Prussian Bulwark
+subtitle: As the Minister-President of Prussia, Stegerwald has power over the Prussian bureaucracy and security services.
+choose-if: advisor_action_timer <= 0 and z_prussia = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if spd_prussia == 0 : The SPD does not control Prussia. ?]
+on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1
+go-to: prussian_affairs
+
+
 @organizing_workers
 title: Organizing workers
 subtitle: Improve our standing among the workers.
@@ -36,16 +45,6 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; workers_spd += 4*(1-dissent); workers_spd += 3*(1-dissent) if wtb_adopted == 1; labor_strength += 2;
 
 We have increased our organizing among the workers.
-
-
-@union_unity
-title: Union-party coordination
-subtitle: Reduce dissent among the unions.
-choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; labor_dissent -= 10;
-
-We have reduced tensions with the Labor faction.
 
 
 @support_peoples_party
