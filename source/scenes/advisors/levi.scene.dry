@@ -9,24 +9,25 @@ new-page: true
 
 Adenauer is the Mayor of Cologne and is a strong advocate for leaving the tower.
 
-- @building_the_left
-- @kpd_cooperation
+- @support_peoples_party
+- @build_peoples_party
 - @root: Return to main
 
-@building_the_left
-title: Building the Left
-subtitle: Push the SPD to the left.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_strength += 10; left_dissent -= 8; reformist_dissent += 3
+@support_peoples_party
+title: Build support for a People's Party
+subtitle: Can we expand our party beyond Catholics?
+view-if: peoples_party = 0
+choose-if: peoples_party_support <= 4 and advisor_action_timer = 0 and peoples_party = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if peoples_party_support > 4: There is already substantial support for a People's Party. ?]
+on-arrival: advisor_action_timer = 6; peoples_party_support += 1; left_labor_dissent +=2 ; clerical_dissent +=2
 
-We have increased the strength of the left faction with the SPD. This raised concern among the moderate reformists in the party.
+We are building up support for the idea of a People's Party.
 
-@kpd_cooperation
-title: Cooperation with the KPD
-subtitle: Any cooperation between the parties requires compromise from the KPD as well as the SPD.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_strength += 5; kpd_relation += 6*(1-dissent); reformist_dissent += 3; communist_coalition += 1 if kpd_cooperation_seen <= 1; kpd_cooperation_seen += 1
-
-Levi attempts to reach out to his former colleagues to dissuade the KPD from their current extreme Stalinist path. Some concessions are extracted.
+@build_peoples_party
+title: Building a People's Party
+subtitle: Can we expand our party beyond Catholics?
+view-if: peoples_party = 0
+choose-if: peoples_party_support >= 3 and advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if peoples_party_support < 3: There is not enough support for this policy within the party. ?]
+on-arrival: advisor_action_timer = 6; left_labor_dissent +=5 ; clerical_dissent +=5
+go-to: peoples_party
