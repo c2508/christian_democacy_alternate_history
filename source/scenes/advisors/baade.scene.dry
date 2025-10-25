@@ -42,25 +42,7 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; left_labor_dissent +=5 ; clerical_dissent +=5
 go-to: peoples_party
 
-@campaigning_peoples_party
-title: Campaigning as a People's Party
-subtitle: Campaigning with some of our previously nontraditional demographics.
-view-if: peoples_party = 1
-choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6;
-go-to: peoples_party_campaigning
 
-@agriculture
-title: Agricultural Policy
-subtitle: Baade is the Minister of Agriculture.
-choose-if: advisor_action_timer <= 0 and spd_in_government and agriculture_minister_party == "SPD"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not in government. ?][? if agriculture_minister_party != "SPD": The SPD does not have the Agriculture Ministry. ?]
-on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
-go-to: agricultural_policy
-
-
-@rural_campaign
 title: Rural Campaign
 subtitle: Try to campaign among the rural populace.
 choose-if: advisor_action_timer == 0 and rural_policy > 0
@@ -69,12 +51,7 @@ on-arrival: advisor_action_timer = 6; rural_spd += 5*(1-dissent); peoples_party_
 
 We have increased our campaigning among farmers and the rural populace.
 
-@depression
-title: Addressing the economic crisis
-subtitle: Formulate a plan to rescue us from the economic crisis.
-choose-if: advisor_action_timer <= 0 and wtb_adopted = 0 and black_thursday_seen
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
-on-arrival: advisor_action_timer = 6; wtb_support += 2; center_dissent += 10; labor_strength += 1
+
 
 The WTB-Plan, standing for its primary supporters Woytinsky, Tarnow, and Baade, has been adopted as the unions' plan for getting us out of the depression. Baade canvasses in favor of this plan throughout the party.
 
