@@ -1,13 +1,13 @@
-title: Siegfried Aufhäuser
+title: Adam Stegerwald
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/AufhäuserSiegfried.jpg
 view-if: aufhauser_advisor = 1
 new-page: true 
 
-= Siegfried Aufhäuser
+= Adam Stegerwald
 
-Aufhäuser is a leader of the AfA-Bund, the federation of socialist white-collar trade unions.
+Stegerwald is the leader of the DGB, the catholic trade union association. 
 
 - @white_collar
 - @union_unity
@@ -15,14 +15,14 @@ Aufhäuser is a leader of the AfA-Bund, the federation of socialist white-collar
 - @moderate_economic_plan
 - @root: Return to main
 
-@white_collar
-title: Organizing white-collar workers
-subtitle: Improve our standing among the new middle class.
+@workers
+title: Organizing workers
+subtitle: Improve our standing among the urban working class.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
-on-arrival: advisor_action_timer = 6; new_middle_spd += 6*(1-dissent);
+on-arrival: advisor_action_timer = 6; workers_spd += 6*(1-dissent);
 
-We have increased our organizing among white-collar workers.
+We have increased our organizing among the urban workers.
 
 @union_unity
 title: Union-party coordination
