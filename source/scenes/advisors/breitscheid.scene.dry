@@ -1,15 +1,14 @@
-title: Rudolf Breitscheid
+title: Joseph Wirth
 is-pinned-card: true 
 tags: advisor, centrist
 card-image: img/portraits/BreitscheidRudolf.jpg
 new-page: true
 view-if: breitscheid_advisor = 1
 
-= Rudolf Breitscheid
+= Joseph Wirth
 
-Breitscheid is a long-time SPD leader, who was at one time part of the anti-war USPD. He came from a working-class family, but has a doctorate degree and started his political career as a liberal.
-
-- @breitscheid_international
+Wirth is a former chancellor and figure of the Zentrum's left wing who has been devotedly republican, to the extent of angering his former party members. He is a strong supporter of maintaining democracy and cooperation with the SPD.
+- @Cooperation with the SPD
 - @breitscheid_foreign
 - @party_discipline
 - @snap_election
