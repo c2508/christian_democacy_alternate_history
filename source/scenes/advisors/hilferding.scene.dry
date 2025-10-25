@@ -48,6 +48,15 @@ on-arrival: advisor_action_timer = 6; left_dissent -= 10; neorevisionist_dissent
 
 We have reduced dissent among the anti-toleration factions.
 
+@vatican_fundraising
+title: Vatican Fundraising  
+subtitle: Kaas leverages his contacts within the Vatican to secure some funding for the Zentrum
+unavailable-subtitle: [? if not : lateran_treaty_ratified We must wait for the ratification of the Lateran Treaty in Italy. ?]
+choose-if: lateran_plan_ratified == 1 
+on-arrival: advisor_action_timer = 6; resources +=2 
+
+We have gained two resources. 
+
 @finance_ministry_
 title: Fiscal Policy
 subtitle: As Finance Minister, Hilferding can enact tax policies.
