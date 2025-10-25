@@ -8,11 +8,45 @@ view-if: breitscheid_advisor = 1
 = Joseph Wirth
 
 Wirth is a former chancellor and figure of the Zentrum's left wing who has been devotedly republican, to the extent of angering his former party members. He is a strong supporter of maintaining democracy and cooperation with the SPD.
-- @Cooperation with the SPD
-- @breitscheid_foreign
+- @spd_cooperation
+- @build_reichsbanner
 - @party_discipline
 - @snap_election
 - @root: Return to main
+
+@spd_cooperation
+title: Cooperation with the SPD
+subtitle: Push the party to be more friendly towards the SPD.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6; left_labor_strength += 5; spd_relation += 5*(1-dissent) right_dissent += 5; left_labor_dissent -= 1
+
+@build_reichsbanner
+title: Reichsbanner
+subtitle: Wirth supports providing more resources to the Reichsbanner.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; reichsbanner_timer -= 6; last_advisor_action = 1
+go-to: reichsbanner 
+
+@democratic_rally
+title: Rally for democracy
+subtitle: Rally our party and the German people to defend democracy and freedom.
+choose-if: advisor_action_timer == 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; left_labor_strength += 5; right_dissent += 2; workers_spd += 4*(1-dissent) if democratization >= 4; new_middle_spd += 3*(1-dissent) if democratization >= 4
+
+Wirth helps us to rally the people in defense of democracy.
+
+@snap_election
+title: Snap Election
+subtitle: Call a snap election.
+unavailable-subtitle: [? if chancellor != "Wirth" and president != "Wirth" : Wirth must be Chancellor or President. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if president = "Wirth" and presidential_powers : We have removed this power from the president with a constitutional reform. ?]
+choose-if: advisor_action_timer == 0 and (chancellor == "Wirth" or (president == "Wirth" and not presidential_powers))
+on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
+
+We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+
 
 @breitscheid_international
 title: International Party Relations
@@ -39,6 +73,16 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
 
 We have enforced party discipline to reduce dissent across all factions.
+
+
+@snap_election
+title: Snap Election
+subtitle: Call a snap election.
+unavailable-subtitle: [? if chancellor != "Braun" and president != "Braun" : Braun must be Chancellor or President. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if president = "Braun" and presidential_powers : We have removed this power from the president with a constitutional reform. ?]
+choose-if: advisor_action_timer == 0 and (chancellor == "Braun" or (president == "Braun" and not presidential_powers))
+on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
+
+We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
 
 
 
