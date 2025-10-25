@@ -24,14 +24,13 @@ on-arrival: advisor_action_timer = 6; nazi_urgency += 1; rb_militancy += 0.01 if
 
 We have begun a propaganda campaign to warn our members away from the <span style="color: #7A3C00;">Nazis</span>.
 
-@youth
-choose-if: resources > 0
-unavailable-subtitle: Not enough resources.
-subtitle: -1 resources
-view-if: not rb_explode
-on-arrival: resources -= 1; rb_strength += 50; rb_militancy += 0.02; left_labor_strength += 5; 
+@catholic_youth
+title: Support Catholic youth organisations
+subtitle: We must end our reputation as a party for old men by increasing funding to the youth organizations. -1 resources
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if resources <= 0 : Not enough resources. ?]
+choose-if: advisor_action_timer = 0 and resources > 0
+on-arrival: advisor_action_timer = 6; resources -= 1; left_labor_strength += 5; left_labor_dissent -= 3; rb_strength += 50; rb_militancy += 0.025; catholics_z += 3*(1-dissent); 
 
-Our new youth members flock to the left labor wing of the party and the Reichsbanner.
 
 
 @spd_cooperation
