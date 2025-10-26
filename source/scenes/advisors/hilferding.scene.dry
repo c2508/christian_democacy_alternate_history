@@ -32,7 +32,7 @@ We have signed a Concordat between the Free State of Prussia and the Roman Catho
 @vatican_funding_
 title: Vatican Funding  
 subtitle: Kaas leverages his contacts within the Vatican to secure some funding for Zentrum.
-unavailable-subtitle: [? if not : lateran_treaty_ratified We must wait for the ratification of the Lateran Treaty in Italy. ?]
+unavailable-subtitle: [? if not lateran_treaty_ratified: We must wait for the ratification of the Lateran Treaty in Italy. ?]
 choose-if: lateran_treaty_ratified == 1 
 on-arrival: advisor_action_timer = 6; resources += 2 
 
