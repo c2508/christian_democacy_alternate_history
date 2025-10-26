@@ -19,10 +19,10 @@ Stegerwald is the leader of the DGB, the Catholic Trade Union Association.
 
 @coalition
 title: Negotiating with the Coalition
-subtitle: Stegerwald can improve our relationships with our centrist and center-[? if spd_prussia = 1 : left ?][? if spd_prussia = 0 : right ?] coalition partners in Prussia as well as in the Reichstag.
+subtitle: Stegerwald can improve our relationships with our coalition partners in Prussia as well as in the Reichstag.
 choose-if: advisor_action_timer <= 0 and (spd_prussia or in_weimar_coalition or in_grand_coalition or in_popular_front)
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not spd_prussia : The Zentrum is not in Prussian government. ?]
-on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 6; ddp_relation += 6; dvp_relation += 2; dvp_relation += 3 if in_grand_coalition
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not z_prussia : The Zentrum is not in Prussian government. ?]
+on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; spd_relation += 6; ddp_relation += 6; dvp_relation += 2; dvp_relation += 3 if in_grand_coalition
 
 We have improved our relations with the [? if in_grand_coalition : Center (Zentrum) Party, [+ ddp_name +], and DVP, ?][? if not in_grand_coalition: Center (Zentrum) Party and [+ ddp_name +], ?] and reduced tensions with the coalition.
 
@@ -30,7 +30,7 @@ We have improved our relations with the [? if in_grand_coalition : Center (Zentr
 title: The Prussian Bulwark
 subtitle: As the Minister-President of Prussia, Stegerwald has power over the Prussian bureaucracy and security services.
 choose-if: advisor_action_timer <= 0 and z_prussia = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if spd_prussia == 0 : The Zentrum does not control Prussia. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if z_prussia == 0 : The Zentrum does not control Prussia. ?]
 on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1
 go-to: prussian_affairs
 
