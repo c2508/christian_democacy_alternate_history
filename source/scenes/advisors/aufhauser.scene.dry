@@ -17,7 +17,6 @@ Stegerwald is the leader of the DGB, the Catholic Trade Union Association.
 - @snap_election
 - @root: Return to main
 
-
 @coalition
 title: Negotiating with the Coalition
 subtitle: Stegerwald can improve our relationships with our centrist and center-[? if spd_prussia = 1 : left ?][? if spd_prussia = 0 : right ?] coalition partners in Prussia as well as in the Reichstag.
@@ -26,7 +25,6 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 6; ddp_relation += 6; dvp_relation += 2; dvp_relation += 3 if in_grand_coalition
 
 We have improved our relations with the [? if in_grand_coalition : Center (Zentrum) Party, [+ ddp_name +], and DVP, ?][? if not in_grand_coalition: Center (Zentrum) Party and [+ ddp_name +], ?] and reduced tensions with the coalition.
-
 
 @prussian_bulwark
 title: The Prussian Bulwark
@@ -72,6 +70,3 @@ choose-if: advisor_action_timer == 0 and president == "Stegerwald"
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
 
 We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
-
-
-
