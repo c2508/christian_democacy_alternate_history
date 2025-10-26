@@ -2,7 +2,7 @@ title: Andreas Hermes
 is-pinned-card: true
 tags: advisor, right
 card-image: img/portraits/HirschfeldMagnus.jpg
-view-if: hirschfeld_advisor = 1
+view-if: hermes_advisor = 1
 new-page: true 
 
 = Andreas Hermes
