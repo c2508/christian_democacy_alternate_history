@@ -2,7 +2,7 @@ title: Joseph Joos
 is-pinned-card: true
 tags: advisor, left_labor
 card-image: img/portraits/JoosJoseph.jpg
-view-if: juchacz_advisor = 1
+view-if: joos_advisor = 1
 new-page: true 
 
 = Joseph Joos
