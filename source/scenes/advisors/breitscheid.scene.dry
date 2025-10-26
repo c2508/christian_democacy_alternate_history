@@ -19,7 +19,7 @@ title: Cooperation with the SPD
 subtitle: Push the party to be more friendly towards the SPD.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_labor_strength += 5; spd_relation += 5*(1-dissent); right_dissent += 5; right_labor_dissent =+3; left_labor_dissent -= 1
+on-arrival: advisor_action_timer = 6; left_labor_strength += 5; spd_relation += 5*(1-dissent); right_dissent += 5; right_labor_dissent +=3; left_labor_dissent -= 1
 
 Wirth was in the SPD before and is able to use his close ties with SPD members to deepen cooperation between both parties. 
 
