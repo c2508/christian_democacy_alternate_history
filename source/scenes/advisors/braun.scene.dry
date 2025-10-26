@@ -11,7 +11,6 @@ Marx [? if spd_prussia = 1 : is ?][? if spd_prussia = 0 : was ?] the Minister-Pr
 
 - @coalition
 - @party_discipline
-- @snap_election
 - @root: Return to main
 
 @coalition
