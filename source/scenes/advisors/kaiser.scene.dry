@@ -2,7 +2,7 @@ title: Jakub Kaiser
 is-pinned-card: true
 tags: advisor, left_labor
 card-image: img/portraits/LeipartTheodor.jpg
-view-if: leipart_advisor = 1
+view-if: kaiser_advisor = 1
 new-page: true 
 
 = Jakub Kaiser
