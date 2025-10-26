@@ -2,7 +2,7 @@ title: Theodor Von Guerard
 is-pinned-card: true
 tags: advisor, centrist
 card-image: img/portraits/LeberJulius.jpg
-view-if: leber_advisor = 1
+view-if: guerard_advisor = 1
 new-page: true 
 
 = Theodar Von Guerard
