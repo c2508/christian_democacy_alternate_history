@@ -32,7 +32,7 @@ choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; international_relations_timer -= 12; last_advisor_action = 1
 go-to: international_relations
 
-@breitscheid_foreign
+@bruning_foreign
 title: Foreign Policy
 subtitle: As Foreign Minister, Bruning can set our foreign policy.
 unavailable-subtitle: [? if not z_in_government: Zentrum is not in government. ?] [? if foreign_minister_party != "Z" : Zentrum does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
