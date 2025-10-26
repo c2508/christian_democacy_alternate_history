@@ -37,8 +37,8 @@ We are building up support for the idea of a People's Party.
 title: Building a People's Party
 subtitle: Can we expand our party beyond Catholics?
 view-if: peoples_party = 0
-choose-if: peoples_party_support >= 3 and advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if peoples_party_support < 3: There is not enough support for this policy within the party. ?]
+choose-if: peoples_party_support >= 4 and advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if peoples_party_support < 4: There is not enough support for this policy within the party. ?]
 on-arrival: advisor_action_timer = 6; left_labor_dissent += 5; clerical_dissent += 5
 go-to: peoples_party
 
