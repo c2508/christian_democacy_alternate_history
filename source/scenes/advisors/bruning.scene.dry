@@ -3,7 +3,7 @@ is-pinned-card: true
 tags: advisor, centrist
 card-image: img/portraits/MüllerHermann.jpg
 new-page: true
-view-if: muller_advisor = 1
+view-if: bruning_advisor = 1
 
 = Heinrich Bruning
 
