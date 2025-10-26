@@ -3,7 +3,7 @@ is-pinned-card: true
 tags: advisor, left_labor
 card-image: img/portraits/BreitscheidRudolf.jpg
 new-page: true
-view-if: breitscheid_advisor = 1
+view-if: wirth_advisor = 1
 
 = Joseph Wirth
 
