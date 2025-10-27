@@ -16,6 +16,7 @@ new-page: true
 - @root: Return to main
 
 @negotiate_prussian_concordat_
+title: Negotiate a Concordat in Prussia
 view-if: prussian_concordat_progress < 2 and z_prussia = 1
 on-arrival: prussian_concordat_progress += 1; right_strength += 8; left_labor_dissent -= 10; right_labor_dissent -= 10; center_dissent -= 10; right_dissent -= 10
 
@@ -23,6 +24,7 @@ We are making progress towards negotiating a concordat between Prussia and the C
 
 
 @sign_prussian_concordat_
+title: We can sign a Concordat in Prussia now
 view-if: prussian_concordat_progress >= 2 and prussian_concordat = 0 and z_prussia = 1
 on-arrival: prussian_concordat = 1; catholics_z += 5*(1-dissent); right_strength += 10; left_labor_dissent -= 10; right_labor_dissent -= 10; center_dissent -= 10; right_dissent -= 10
 
