@@ -7,9 +7,11 @@ new-page: true
 
 = Christine Teusch
 
-Rosenfeld works as a lawyer in Berlin who defends left-wing individuals and causes. He favors cooperation with the KPD and a path of class struggle for the SPD.
+Teusch has held influential roles in Catholic Women organsations since 1915 and has much appeal amongst her peers.
 
 - @curriculum_
+- @structure_
+- 
 - @root: Return to main
 
 @curriculum_
@@ -19,4 +21,19 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: education_science.curriculum
 
+@structure_
+title: Change the structure and funding of education.
+choose-if: advisor_action_timer = 0 and z_in_government and chancellor_party = "Z" and z_prussia
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not z_in_government : The Zentrum is not currently in government. ?][? if chancellor_party != "Z": The Zentrum must control the chancellorship. ?][? if not z_prussia: The Zentrum must control the Prussian government. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: education_science.structure
+
+@organizing_women
+title: Organizing women
+subtitle: Teusch's strategies are aimed at Catholic women.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: womens_rights += 1; workers_z += 2*(1-dissent); rural_z += 1*(1-dissent); catholics_z += 5*(1-dissent); advisor_action_timer = 6
+
+Teusch's strategies for organizing women are aimed at women in the workforce, and is part of her vision of a Catholic's women movement.
 
