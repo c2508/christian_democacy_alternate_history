@@ -11,12 +11,22 @@ new-page: true
 Georg Schreiber is a church historian and science and cultural politician
 
 - @science_funding
+- @nazi_urgency
 - @root: Return to main
 
 @science_funding
 title: Science funding
 subtitle: Increase funding for scientific research.
-choose-if: advisor_action_timer = 0 and spd_in_government and economic_minister_party = "Z" and chancellor_party = "Z"
+choose-if: advisor_action_timer = 0 and z_in_government and economic_minister_party = "Z" and chancellor_party = "Z"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not z_in_government : Zentrum is not currently in government. ?][? if economic_minister_party != "Z": This requires the Economic Ministry. ?][? if chancellor_party != "Z": The Chancellor must be a Zentrum member. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: education_science.increase_science
+
+@nazi_urgency
+title: Warning about the Nazis
+subtitle: By warning the party about the Nazis, we can spur our members to action.
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; nazi_urgency += 1; rb_militancy += 0.01; nsdap_workers -= 4*(1-dissent);
+
+We have begun a propaganda campaign to warn our members away from the Nazis.
