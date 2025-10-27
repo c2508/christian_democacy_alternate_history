@@ -1,4 +1,4 @@
-title: George Schreiber
+title: Georg Schreiber
 
 is-pinned-card: true
 tags: advisor
@@ -6,9 +6,9 @@ card-image: img/portraits/RadbruchGustav.jpg
 view-if: schreiber_advisor = 1
 new-page: true 
 
-= George Schreiber 
+= Georg Schreiber 
 
-George Schreiber is a church historian and science and cultural politician
+Georg Schreiber is a church historian and science and cultural politician
 
 - @science_funding
 - @root: Return to main
