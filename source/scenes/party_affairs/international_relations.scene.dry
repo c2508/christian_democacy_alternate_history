@@ -30,7 +30,7 @@ The Christians of Austria can influence their governments to be friendlier towar
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: right_strength += 8; right_dissent -=4 ; resources -= 1 [? if prussian_concordat = 0; prussian_concordat_progress += 1 ?][? if prussian_concordat = 1; reichskonkordat_progress += 1 ?].
+on-arrival: right_strength += 8; right_dissent -= 4 ; resources -= 1 [? if prussian_concordat = 0; prussian_concordat_progress += 1 ?][? if prussian_concordat = 1; reichskonkordat_progress += 1 ?].
 
 Members of Zentrum have been sent to meet with the officals from the Holy See to discuss the possibility of a [? if prussian_concordat = 0 : Prussian Concordat ?][? if prussian_concordat = 1 : Reichskonkordat ?].
 
