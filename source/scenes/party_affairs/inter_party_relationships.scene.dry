@@ -14,6 +14,7 @@ The SPD cannot govern by itself yet. Because we do not have an electoral majorit
 
 - @liberals: Strengthen our bonds with the left-liberal German Democratic Party and conservative-liberal German People's Party.
 - @spd: Strengthen our bonds with the Social Democratic Party.
+- @dnvp: Strengthen our bonds with the German National People's Party
 - @z_alone: Zentrum can stand alone for now.
 - @easy_discard
 
@@ -61,6 +62,23 @@ on-arrival: dvp_relation += 5*(1 - dissent)
 The liberal parties (both the [+ ddp_name +] and DVP) are electorally moribund, so perhaps our efforts are best spent elsewhere.
 
 However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
+
+@dnvp
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1
+go-to: center_op_d if z_in_government = 1 and dnvp_in_government = 0; center_coalition_d if dnvp_in_government = 1 and z_in_government = 1
+
+@center_op_d
+on-arrival: dnvp_relation += 5*(1 - dissent)
+
+They are currently in opposition to our government, but that does not preclude the general building of feelings of good will.
+
+@center_coalition_d
+on-arrival: dnvp_relation += 8*(1 - dissent)
+
+We are currently coalition partners with them, so improving relations comes naturally.
 
 @z_alone
 
