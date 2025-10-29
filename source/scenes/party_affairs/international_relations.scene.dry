@@ -11,7 +11,7 @@ max-visits: 4
 At the Labor and Socialist International, we can forge contacts with our fraternal socialist parties in Europe and across the world.
 
 - @austria: Build relationships with the Austrian CSP to move their government in Germany's favor.
-- @holy_see_ Build relations with the Holy See 
+- @holy_see: Build relations with the Holy See 
 - @lon: Push for constructive engagement and peaceful arbitration through the League of Nations
 - @america: 
 - @return: We do not need international contacts at the moment.
@@ -26,7 +26,7 @@ on-arrival: resources -= 1; austria_relation += 1; right_strength += 5
 
 The Christians of Austria can influence their governments to be friendlier towards Germany.
 
-@holy_see_
+@holy_see
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
