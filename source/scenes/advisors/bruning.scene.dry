@@ -8,7 +8,7 @@ view-if: bruning_advisor = 1
 = Heinrich Bruning
 
 
-Bruning is a former [? if chancellor = "Müller": and current ?] Chancellor, and managing director of the DGB.
+Bruning is a former [? if chancellor = "Bruning": and current ?] Chancellor, and managing director of the DGB.
 
 - @coalition
 - @bruning_international
