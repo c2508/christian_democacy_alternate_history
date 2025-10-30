@@ -290,7 +290,7 @@ view-if: n_advisors < 3
 title: Konrad Adenauer
 subtitle: Adenauer is the Mayor of Cologne and is a strong advocate for leaving the tower.
 is-card: true
-card-iage: img/portraits/HilferdingRudolf.jpg
+card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
 view-if: adenauer_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: adenauer_advisor = 1; n_advisors += 1
