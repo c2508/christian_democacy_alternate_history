@@ -45,7 +45,7 @@ Adenauer has been removed as an advisor. The Centrist faction disapproves.
 
 @remove_bruning
 title: Remove Bruning
-view-if: muller_advisor = 1
+view-if: bruning_advisor = 1
 tags: remove_advisor
 on-arrival: bruning_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
