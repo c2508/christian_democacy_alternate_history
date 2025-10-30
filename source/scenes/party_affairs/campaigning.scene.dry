@@ -33,8 +33,8 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: new_middle_z += 6*(1-dissent); resources -= 1; new_middle_z += 3 if peoples_party == 1
 
-
 We have increased our campaigning among the new middle class. [? if peoples_party == 1 : Our transformation into a Christian People's Party has allowed to appeal to Christians of all denominations.?]
+
 @old_middle
 subtitle: -1 resources
 choose-if: resources >= 1
@@ -64,6 +64,6 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 view-if: peoples_party == 1
-on-arrival: catholics_spd += 6*(1-dissent); resources -= 1
+on-arrival: catholics_z += 7*(1-dissent); resources -= 1
 
-We have increased our campaigning among Catholics.
+We have increased our campaigning among Catholics, our traditional voting base. 
