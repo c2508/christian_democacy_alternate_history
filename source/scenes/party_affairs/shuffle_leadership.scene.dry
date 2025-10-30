@@ -276,7 +276,7 @@ view-if: n_advisors < 3
 
 - #labor_advisor
 
-@youngcon
+@young_conservative
 view-if: neorevisionism > 0 and n_advisors < 3
 
 - #neorev_advisor
