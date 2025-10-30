@@ -259,27 +259,27 @@ frequency: 1
 @left_labor
 view-if: n_advisors < 3
 
-- #center_advisor
+- #left_labor_advisor
 
 @center
 view-if: n_advisors < 3
 
-- #reformist_advisor
+- #center_advisor
 
 @right_labor
 view-if: n_advisors < 3
 
-- #left_advisor
+- #right_labor_advisor
 
 @right
 view-if: n_advisors < 3
 
-- #labor_advisor
+- #right_advisor
 
 @young_conservative
 view-if: neorevisionism > 0 and n_advisors < 3
 
-- #neorev_advisor
+- #young_conservative_advisor
 
 @nonfactional
 view-if: n_advisors < 3
@@ -290,7 +290,7 @@ view-if: n_advisors < 3
 title: Konrad Adenauer
 subtitle: Adenauer is the Mayor of Cologne and is a strong advocate for leaving the tower.
 is-card: true
-card-image: img/portraits/HilferdingRudolf.jpg
+card-iage: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
 view-if: adenauer_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: adenauer_advisor = 1; n_advisors += 1
