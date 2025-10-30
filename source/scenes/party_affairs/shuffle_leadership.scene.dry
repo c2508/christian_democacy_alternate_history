@@ -65,7 +65,7 @@ Guerard been removed as an advisor. The Centrist faction disapproves.
 
 @remove_kohler
 title: Remove Kohler
-view-if: dessauer_advisor = 1
+view-if: kohler_advisor = 1
 tags: remove_advisor
 on-arrival: kohler_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
