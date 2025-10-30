@@ -103,14 +103,14 @@ go-to: rm_main
 
 Joos has been removed as an advisor. The Left Labor faction disapproves.
 
-@remove_kaiser
-title: Remove Kaiser
-view-if: kaiser_advisor = 1
+@remove_hess
+title: Remove Hess
+view-if: hess_advisor = 1
 tags: remove_advisor
-on-arrival: kaiser_advisor = 0; left_labor_dissent += 5; n_advisors -= 1
+on-arrival: hess_advisor = 0; left_labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Juchacz has been removed as an advisor. The Left Labor faction disapproves.
+Hess has been removed as an advisor. The Left Labor faction disapproves.
 
 @remove_wirth
 title: Remove Wirth
