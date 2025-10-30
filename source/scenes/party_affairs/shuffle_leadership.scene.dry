@@ -247,7 +247,7 @@ tags: center_advisor, left_labor_advisor, right_advisor, right_labor_advisor, yo
 frequency: 1
 
 
-- @centrist: Add Centrists
+- @center: Add Centrists
 - @left_labor: Add Left Labor
 - @right_labor: Add Right
 - @right: Add Right Labor
