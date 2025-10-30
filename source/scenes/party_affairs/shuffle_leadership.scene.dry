@@ -53,7 +53,7 @@ go-to: rm_main
 Bruning has been removed as an advisor. The Centrist faction disapproves.
 
 
-@remove_Guerard
+@remove_guerard
 title: Remove Guerard
 view-if: guerard_advisor = 1
 tags: remove_advisor
