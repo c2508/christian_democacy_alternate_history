@@ -1,13 +1,13 @@
-title: Jakub Kaiser
+title: Joseph Hess
 is-pinned-card: true
 tags: advisor, left_labor
 card-image: img/portraits/LeipartTheodor.jpg
-view-if: kaiser_advisor = 1
+view-if: hess_advisor = 1
 new-page: true 
 
 = Jakub Kaiser
 
-Kaiser is a trade union leader. 
+Hess is the leader of the Prussian Center Party.
 
 - @organizing
 - @union_unity
