@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: center_advisor, left_labor_advisor, advisor, right_labor_advisor, young_conservatives_advisor, nonfactional_advisor 
+tags: center_advisor, left_labor_advisor, right_labor_advisor, right_advisor, young_conservatives_advisor, nonfactional_advisor 
 frequency: 1
 
 - #remove_advisor
@@ -133,156 +133,101 @@ go-to: rm_main
 
 Brauns has been removed as an advisor. The Right Labor faction disapproves.
 
-@remove_aufhauser
-title: Remove Aufhäuser
+@remove_stegerwald
+title: Remove Stegerwald
 view-if: aufhauser_advisor = 1
 tags: remove_advisor
-on-arrival: aufhauser_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: stegerwald_advisor = 0; right_labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Aufhäuser has been removed as an advisor. The Labor faction disapproves.
+Stegerwald has been removed as an advisor. The Right Labor faction disapproves.
 
-@remove_wissell
-title: Remove Wissell
-view-if: wissell_advisor = 1
+# right
+
+@remove_hermes
+title: Remove Hermes
+view-if: hermes_advisor = 1
 tags: remove_advisor
-on-arrival: wissell_advisor = 0; labor_dissent += 3; n_advisors -= 1
+on-arrival: hermes_advisor = 0; right_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Wissell has been removed as an advisor. The Labor faction disapproves.
+Hermes has been removed as an advisor. The Right faction disapproves.
 
 
-@remove_woytinsky
-title: Remove Woytinsky
-view-if: woytinsky_advisor = 1
+@remove_kaas
+title: Remove Kaas
+view-if: kaas_advisor = 1
 tags: remove_advisor
-on-arrival: woytinsky_advisor = 0; labor_dissent += 3; n_advisors -= 1
+on-arrival: kass_advisor = 0; right_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Woytinsky has been removed as an advisor. The Labor faction disapproves.
+Kaas has been removed as an advisor. The Right faction disapproves.
 
-# left
+# young conservatives
 
-@remove_levi
-title: Remove Levi
-view-if: levi_advisor = 1
+@remove_treviranus
+title: Remove Treviranus
+view-if: treviranus_advisor = 1
 tags: remove_advisor
-on-arrival: levi_advisor = 0; left_dissent += 5; n_advisors -= 1
+on-arrival: treviranus_advisor = 0; young_conservative_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Levi has been removed as an advisor. The Leftist faction disapproves.
+Treviranus has been removed as an advisor. The Young Conservative faction disapproves.
 
-@remove_sender
-title: Remove Sender
-view-if: sender_advisor = 1
+@remove_jung
+title: Remove Lejeune Jung
+view-if: jung_advisor = 1
 tags: remove_advisor
-on-arrival: sender_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: jung_advisor = 0; young_conservative_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Sender has been removed as an advisor. The Leftist faction disapproves.
+Lejeune Jung has been removed as an advisor. The Young Conservative faction disapproves.
 
-@remove_rosenfeld
-title: Remove Rosenfeld
-view-if: rosenfeld_advisor = 1
+@remove_vorbeck
+title: Remove Lettow-Vorbeck
+view-if: vorbeck_advisor = 1
 tags: remove_advisor
-on-arrival: rosenfeld_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: vorbeck_advisor = 0; young_conservative_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Rosenfeld has been removed as an advisor. The Leftist faction disapproves.
-
-@remove_seydewitz
-title: Remove Seydewitz
-view-if: seydewitz_advisor = 1
-tags: remove_advisor
-on-arrival: seydewitz_advisor = 0; left_dissent += 3; n_advisors -= 1
-go-to: rm_main
-
-Seydewitz has been removed as an advisor. The Leftist faction disapproves.
-
-@remove_siemsen
-title: Remove Siemsen
-view-if: siemsen_advisor = 1
-tags: remove_advisor
-on-arrival: siemsen_advisor = 0; left_dissent += 3; n_advisors -= 1
-go-to: rm_main
-
-Siemsen has been removed as an advisor. The Leftist faction disapproves.
+Lettow-Vorbeck has been removed as an advisor. The Young Conservative faction disapproves.
 
 
 
-
-# neorevisionists
-
-@remove_mierendorff
-title: Remove Mierendorff
-view-if: mierendorff_advisor = 1
-tags: remove_advisor
-on-arrival: mierendorff_advisor = 0; neorevisionist_dissent += 5; n_advisors -= 1
-go-to: rm_main
-
-Mierendorff has been removed as an advisor. The Neorevisionist faction disapproves.
-
-@remove_leber
-title: Remove Leber
-view-if: leber_advisor = 1
-tags: remove_advisor
-on-arrival: leber_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
-go-to: rm_main
-
-Leber has been removed as an advisor. The Neorevisionist faction disapproves.
-
-@remove_schumacher
-title: Remove Schumacher
-view-if: schumacher_advisor = 1
-tags: remove_advisor
-on-arrival: schumacher_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
-go-to: rm_main
-
-Schumacher has been removed as an advisor. The Neorevisionist faction disapproves.
 
 
 ## nonfactional
 
 # tbh I'm not sure if Baade should be a reformist or nonfactional. same for stampfer. they were vaguely reformist-aligned but had pretty different ideas from the other reformists here. so they're non-factional.
 
-@remove_baade
-title: Remove Baade
-view-if: baade_advisor = 1
+@remove_schreiber
+title: Remove Schreiber
+view-if: schreiber_advisor = 1
 tags: remove_advisor
-on-arrival: baade_advisor = 0; n_advisors -= 1
+on-arrival: schreiber_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Baade has been removed as an advisor.
+Schreiber has been removed as an advisor.
 
-#The Reformist faction disapproves.
-
-
-@remove_hirschfeld
-title: Remove Hirschfeld
-view-if: hirschfeld_advisor = 1
+@remove_teusch
+title: Remove Teusch
+view-if: teusch_advisor = 1
 tags: remove_advisor
-on-arrival: hirschfeld_advisor = 0; n_advisors -= 1
+on-arrival: teusch_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Hirschfeld has been removed as an advisor. 
+Teusch has been removed as an advisor. 
 
-@remove_stampfer
-title: Remove Stampfer
-view-if: stampfer_advisor = 1
+@remove_dessauer
+title: Remove Dessauer
+view-if: dessauer_advisor = 1
 tags: remove_advisor
-on-arrival: stampfer_advisor = 0; n_advisors -= 1
+on-arrival: dessauer_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Stampfer has been removed as an advisor. 
+Dessauer has been removed as an advisor. 
 
-@remove_radbruch
-title: Remove Radbruch
-view-if: radbruch_advisor = 1
-tags: remove_advisor
-on-arrival: radbruch_advisor = 0; n_advisors -= 1
-go-to: rm_main
 
-Radbruch has been removed as an advisor. 
 
 
 
@@ -298,40 +243,40 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
+tags: center_advisor, left_labor_advisor, right_advisor, right_labor_advisor, young_conservative_advisor, nonfactional_advisor
 frequency: 1
 
 
 - @centrist: Add Centrists
-- @left: Add Leftists
-- @reformist: Add Reformists
-- @labor: Add Labor
-- @neorev: Add Neorevisionists
+- @left_labor: Add Left Labor
+- @right_labor: Add Right
+- @right: Add Right Labor
+- @young_conservative: Add Young Conservatives
 - @nonfactional: Add non-factional advisors
 - @rm_main: Remove advisors instead.
 - @remove_none: Stop changing advisors.
 
-@centrist
+@left_labor
 view-if: n_advisors < 3
 
 - #center_advisor
 
-@reformist
+@center
 view-if: n_advisors < 3
 
 - #reformist_advisor
 
-@left
+@right_labor
 view-if: n_advisors < 3
 
 - #left_advisor
 
-@labor
+@right
 view-if: n_advisors < 3
 
 - #labor_advisor
 
-@neorev
+@youngcon
 view-if: neorevisionism > 0 and n_advisors < 3
 
 - #neorev_advisor
