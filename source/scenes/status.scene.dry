@@ -179,4 +179,112 @@ Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, 
 
 Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
+@paramilitaries
+on-arrival: {!
+Q.rb_strength_2 = Q.rb_strength.toFixed(1);
+Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
+Q.sh_strength_2 = Q.sh_strength.toFixed(1);
+Q.sa_strength_2 = Q.sa_strength.toFixed(1);
+!}
+
+= Paramilitaries
+
+<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: #c00000;">**Reichsbanner**</span> Strength: [+ rb_strength_2 +] thousand
+
+<span style="color: #c00000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
+
+<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: #8B0000;">**RFB**</span> Strength: [+ rfb_strength_2 +] thousand
+
+<span style="color: #8B0000;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
+
+<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP." style="color:#3E88B3;">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
+
+<span style="color: #3E88B3;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
+
+<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary." style="color: #7A3C00;">**SA**</span> Strength: [+ sa_strength_2 +] thousand
+
+<span style="color: #7A3C00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
+
+[? if year >= 1930 and not streetfighting_joever: <h1>Distribution of Power</h1> ?]
+
+[? if year >= 1930 and not streetfighting_joever: <h4>[? if not kpd_truce: <span style="color: #000000;">Dem</span><span style="color: #DD0000;">ocra</span><span style="color: #FFCC00;">tic</span>?][? if kpd_truce: Anti-<span style="color: #7A3C00;">Fascist</span>?] strength: [+ democracy_force +]%</h4>?]
+
+[? if year >= 1930 and not streetfighting_joever: <span style="color: #c00000;">**Reichsbanner**</span>: [+ rb_force +]%?]
+
+[? if year >= 1930 and not streetfighting_joever and prussia_leader != "Papen" and prussia_leader != "Schleicher" and prussia_leader != "Strasser": <b>Prussian police: [+ prussia_force +]%</b>?]
+
+[? if year >= 1930 and not streetfighting_joever and kpd_truce: <span style="color: #8B0000;">**RFB**</span>: [+ rfb_force +]%?]
+
+[? if year >= 1930 and not streetfighting_joever: <h4><span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> strength: [+ far_right_force +]%</h4>?]
+
+[? if year >= 1930 and not streetfighting_joever: <span style="color: #7A3C00;">**SA**</span>: [+ sa_force +]%?]
+
+[? if year >= 1930 and not streetfighting_joever: <span style="color: #3E88B3;">**Stahlhelm**</span>: [+ sh_force +]%?]
+
+[? if year >= 1930 and not streetfighting_joever and not kpd_truce: <span style="color: #8B0000;">**RFB**</span>: [+ rfb_force +]%?]
+
+[? if year >= 1930 and not streetfighting_joever and (prussia_leader == "Papen" or prussia_leader == "Schleicher" or prussia_leader == "Strasser") or reichswehr_street: <h4><span style="color: #BFC8CC;">**State**</span> strength: [+ state_force +]%</h4>?]
+
+[? if year >= 1930 and not streetfighting_joever and prussia_leader == "Papen" or prussia_leader == "Schleicher" or prussia_leader == "Strasser": <b>Prussian police: [+ prussia_force +]%</b>?]
+
+[? if year >= 1930 and not streetfighting_joever and reichswehr_street: <b>Reichswehr Gendarmerie: [+ reichswehr_force +]%</b>?]
+
+[? if year >= 1930 and not streetfighting_joever: Currently, the streets are [? if far_right_paramilitary and rfb_force < far_right_force:[? if far_right_paramilitary_highest: fully controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_high: dominated by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_med: controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_low: in the slight control of the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if sa_paramilitary:, mainly by the violent <span style="color: #7A3C00;">**SA**</span>?]?][? if rfb_force >= far_right_force and far_right_paramilitary: controlled by the <span style="color: #700000;">**RFB**</span>?][? if democracy_paramilitary and rfb_force < democracy_force:[? if democracy_paramilitary_highest: fully controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_high: dominated by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_med: controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_low: in the slight control of the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?]?][? if rfb_force >= democracy_force and democracy_paramilitary: controlled by the <span style="color: #700000;">**RFB**</span>?][? if state_paramilitary:[? if state_paramilitary_highest: fully controlled by the <span style="color: #BFC8CC;">**State**</span>?][? if state_paramilitary_high: dominated by the <span style="color: #BFC8CC;">**State**</span>?][? if state_paramilitary_med: controlled by the <span style="color: #BFC8CC;">**State**</span>?][? if state_paramilitary_low: in the slight control of the <span style="color: #BFC8CC;">**State**</span>?]?].?]
+
+
+= Official military/paramilitaries
+
+Reichswehr: [+ reichswehr_strength +] thousand troops.
+
+Reichswehr Loyalty: [+ reichswehr_loyalty : loyalty +]
+
+Prussian police: [+ prussian_police_strength +] thousand members.
+
+Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
+
+[? if spd_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
+
+@polls
+on-arrival: {!
+Q.pro_republic_disp = Math.round(Q.pro_republic);
+Q.nationalism_disp = Math.round(Q.nationalism);
+Q.socialism_disp = Math.round(Q.socialism);
+!}
+
+= Projected election results
+
+(if the election were to be held now):
+
+[? if dnef_formed: <span style="color: #BFC8CC;">**DNEF**</span>: [+ dnef_votes +]% ?]
+
+<span style="color: #c00000;">**SPD**</span>: [+ spd_votes +]%
+
+[? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_votes +]% ?]
+
+<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span>: [+ z_votes +]%
+
+<span style="color: #700000;">**KPD**</span>: [+ kpd_votes +]%
+
+[? if not lvp_formed: [? if not ddp_name: <span style="color: #D3C24D;">**DDP**</span>?][? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]% ?]
+
+[? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>: [+ lvp_votes +]% ?]
+
+[? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>: [+ dvp_votes +]% ?]
+
+[? if kvp_formed and not dnvp_dvp_formed: <span style="color: #0087DC;">**KVP**</span>: [+ kvp_votes +]% ?]
+
+[? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: [+ kvp_votes +]% ?]
+
+[? if not cvp_formed and not dnvp_defunct: <span style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_votes +]%?]
+
+[? if dnf_formed: <span style="color: #003755;">**DNF**</span>: [+ dnf_votes +]% ?]
+
+[? if dsu_exist: <span style="color: #6A1E1E;">**DSU**</span>: [+ dsu_votes +]% ?]
+
+[? if not nsdap_split: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_votes +]% ?]
+
+[? if nsdap_split: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_hitler_votes +]% ?]
+
+[? if nvf_exist: <span style="color: #142e20;">**NVF**</span>: [+ nvf_votes +]% ?]
+
 Support for the Republic: [+ pro_republic_disp +]%
