@@ -9,16 +9,16 @@ new-page: true
 
 # reference: Evans, Ellen L. “Adam Stegerwald and the Role of the Christian Trade Unions in the Weimar Republic.” The Catholic Historical Review 59, no. 4 (1974): 602–26.
 
-Wilhelm Marx, former Center Party chancellor and presidential candidate, has chosen to resign from leadership of the Center Party. Now, the party holds a conference to replace him.
+Wilhelm Marx, former Center Party chancellor and presidential candidate, has chosen to resign from leadership of the Center Party. Now, the party holds a conference to replace him. Several names have been floated around, including Heinrich Brauns, Joseph Joos and Adam Stegerwald.
 
-The party has splintered in two over the vote to decide his sucessor. The current frontrunner is Christian labor union chairman Adam Stegerwald. On the other hand, there is Joseph Joos, who has been more supportive of cooperation with the <span style="color: #c00000;">**SPD**</span> than most of the party. However, if the vote remains deadlocked, a compromise candidate will be selected instead.
+The party has splintered in two over the vote to decide his sucessor. The nominee of the National Committee is Christian labor union chairman Adam Stegerwald. On the other hand, there is Joseph Joos, who has been more supportive of cooperation with the <span style="color: #c00000;">**SPD**</span> than most of the party. However, if the vote remains deadlocked, a compromise candidate will be selected instead.
 
 - @stegerwald: The Center Party elects Adam Stegerwald as the party chair. 
 - @joos: The Center Party to select Joseph Joos as the party chair.
 - @kaas: The Center Party selects Ludwig Kaas as the party chair.
 
 @stegerwald
-unavailable-subtitle: [? if right_dissent > 15: There is too much infighting amongst the right wing of the party. ?][? if right__labor_dissent > 15: There is too much infighting amongst the right labor faction. ?][? if right_strength < 30: The right labor faction is too weak. ?] 
+unavailable-subtitle: [? if right_dissent > 15:There is too much infighting with the right faction of the party. ?][? if right__labor_dissent > 15: The white collar unions are still unhappy with Stegerwald's decision to side with the bourgeoisie in 1927. ?][? if right_strength < 30: Stegerwald does not have enough influence to secure the nomination. ?] 
 subtitle: Stegerwald belongs to the right labor faction and would rather work with the political right than the SPD.
 on-arrival: z_party_leader = "Stegerwald"; spd_relation -= 5; dnvp_relation += 5; 
 choose-if: right_dissent <= 15 and right_labor_dissent <= 15 and right_labor_strength >= 30
