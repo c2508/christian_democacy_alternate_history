@@ -1,14 +1,14 @@
-title: Heinrich Bruning
+title: Heinrich Brüning
 is-pinned-card: true 
 tags: advisor, centrist
-card-image: img/portraits/BruningHeinrich.jpg
+card-image: img/portraits/BrüningHeinrich.jpg
 new-page: true
 view-if: bruning_advisor = 1
 
-= Heinrich Bruning
+= Heinrich Brüning
 
 
-Bruning is a former [? if chancellor = "Bruning": and current ?] Chancellor, and managing director of the DGB.
+Brüning is a former [? if chancellor = "Bruning": and current ?] Chancellor, and managing director of the DGB.
 
 - @coalition
 - @bruning_international
@@ -17,7 +17,7 @@ Bruning is a former [? if chancellor = "Bruning": and current ?] Chancellor, and
 
 @coalition
 title: Negotiating with the Coalition
-subtitle: Bruning can improve our relationships with our coalition partners.
+subtitle: Brüning can improve our relationships with our coalition partners.
 choose-if: advisor_action_timer <= 0 and spd_in_government = 1
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government: Zentrum is not in government. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; spd_relation += 5; ddp_relation += 5; dvp_relation += 5
@@ -26,7 +26,7 @@ We have improved our relations with the SPD, [+ ddp_name +], and DVP, and reduce
 
 @bruning_international
 title: International Party Relations
-subtitle: Bruning is one of our contacts with international socialist parties.
+subtitle: Brüning is one of our contacts with international socialist parties.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; international_relations_timer -= 12; last_advisor_action = 1
@@ -34,7 +34,7 @@ go-to: international_relations
 
 @bruning_foreign
 title: Foreign Policy
-subtitle: As Foreign Minister, Bruning can set our foreign policy.
+subtitle: As Foreign Minister, Brüning can set our foreign policy.
 unavailable-subtitle: [? if not z_in_government: Zentrum is not in government. ?] [? if foreign_minister_party != "Z" : Zentrum does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0 and z_in_government and foreign_minister_party == "Z"
 on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 8; last_advisor_action = 1
