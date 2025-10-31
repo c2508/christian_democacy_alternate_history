@@ -11,30 +11,37 @@ new-page: true
 
 Wilhelm Marx, former Center Party chancellor and presidential candidate, has chosen to resign from leadership of the Center Party. Now, the party holds a conference to replace him.
 
-The consensus candidate on the right is Ludwig Kaas, a Catholic priest who represents the party's traditionalists. On the other hand, there is Joseph Joos, a leader of the Catholic trade unions, who has been more supportive of cooperation with the SPD than most of the Center Party.
+The party has splintered in two over the vote to decide his sucessor. The current frontrunner is Christian labor union chairman Adam Stegerwald. On the other hand, there is Joseph Joos, who has been more supportive of cooperation with the <span style="color: #c00000;">**SPD**</span> than most of the party. However, if the vote remains deadlocked, a compromise candidate will be selected instead.
 
-- @kaas: The Center Party elects Ludwig Kaas as the party chair.
-- @joos: Influence the Center Party to select Joseph Joos as the party chair.
-- @joos_campaign: We must hold a campaign in support of Joseph Joos as party chair.
+- @stegerwald: The Center Party elects Adam Stegerwald as the party chair. 
+- @joos: The Center Party to select Joseph Joos as the party chair.
+- @kaas: The Center Party selects Ludwig Kaas as the party chair.
 
-@kaas
-on-arrival: z_party_leader = "Kaas"; z_relation -= 5
+@stegerwald
+unavailable-subtitle: [? if right_dissent > 15: There is too much infighting amongst the right wing of the party. ?][? if right__labor_dissent > 15: There is too much infighting amongst the right labor faction. ?][? if right_strength < 30: The right labor faction is too weak. ?] 
+subtitle: Stegerwald belongs to the right labor faction and would rather work with the political right than the SPD.
+on-arrival: z_party_leader = "Stegerwald"; spd_relation -= 5; dnvp_relation += 5
+choose-if: right_dissent <= 15; right_labor_dissent <= 15; right_labor_strength >= 30
 
-Ludwig Kaas has been selected as the chairman of the Center Party. He seems to represent a rightward turn from Marx, and will preside over a Center Party less inclined to compromise with the left.
+Adam Stegerwald has been elected as the chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. He seems to represent a rightward turn from Marx, despite his trade union background, and will preside over a [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] less inclined to compromise with the left. He views the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] as a prototype for a <span style="color: #000000;">Christian</span>, <span style="color: #586593;">democratic</span>, <span style="color: #000000;">German</span>, and <span style="color: #c00000;">social</span> party, and aims to transform it according to the principles laid out in his proposed "Essen program" eight years prior. 
 
 @joos
-unavailable-subtitle: Our relations are not good enough.
-subtitle: Joos is likely to be friendlier to us than Kaas.
-choose-if: z_relation >= 70
-on-arrival: z_party_leader = "Joos"; catholics_spd += 5; workers_z += 3
+unavailable-subtitle: Stegerwald has a strong following within the party. 
+subtitle: Joos belongs to the left labor faction and is friendly with the SPD. 
+choose-if: spd_relation >= 67; left_labor_strength >= right_strength; left_labor_strength >= right_labor_strength; right_dissent > 15; right_labor_dissent > 15; right_labor_strength > 30
+on-arrival: z_party_leader = "Joos"; catholics_spd += 5; workers_z += 3; 
 
-With our grassroots connections, we have been able to influence the Center delegates to support Joseph Joos as the new Center chairman. He has long been a friend of the SPD, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the Center Party to the working class.
+With our strong grassroots connections with the SPD, they have been able to influence the Center delegates to support Joseph Joos as the new Center chairman. He has long been a friend of the SPD, and will be more inclined to collaborate with the SPD compared to Stegerwald. He also increases the appeal of the Center Party to the working class.
 
-@joos_campaign
+@kaas
 choose-if: z_relation >= 62 and resources >= 1 
 view-if: z_relation < 70
 unavailable-subtitle: [? if z_relation <= 62 : Our relations are not good enough. ?] [? if resources < 1 : We do not have enough resources. ?]
-subtitle: -1 resource. Joos is likely to be friendlier to us than Kaas.
-on-arrival: resources -= 1; z_party_leader = "Joos"; catholics_spd += 5; workers_z += 3
+subtitle: The vote is deadlocked between Adam Stegerwald and Joseph Joos. 
+on-arrival: resources -= 1; z_party_leader = "Kaas"; spd_relations -= 5; prussian_concordat_progress += 1
 
-With our grassroots connections as well as a professional campaign, we have been able to influence the Center delegates to support Joseph Joos as the new Center chairman. He has long been a friend of the SPD, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the Center Party to the working class.
+Ludwig Kaas has been selected as the chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] as a compromise candidate between Stegerwald and Joos. He seems to represent a rightward turn from Marx, and will preside over a [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] less inclined to compromise with the left. 
+
+Despite this, Kaas is committed to the current constitutional order and the republic. He maintains a close friendship with Eugenio Pacelli, the Papal Nuncio to Germany, which may prove useful during concordat negotiations.
+
+
