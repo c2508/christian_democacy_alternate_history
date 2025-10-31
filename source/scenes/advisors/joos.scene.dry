@@ -7,7 +7,7 @@ new-page: true
 
 = Joseph Joos
 
-Juchacz is the founder of the Worker's Welfare, our mutual aid organization; her experiences as a single mother in poverty led her to socialism. She is the most senior woman among the SPD leadership, who is often treated as the "go-to" when the predominantly male leadership sought out womens' voices.
+Joseph Joos is a prominent journalist and trade unionist within the party.
 
 - @nazi_urgency
 - @catholic_youth
@@ -26,12 +26,12 @@ We have begun a propaganda campaign to warn our members away from the <span styl
 
 @catholic_youth
 title: Support Catholic youth organisations
-subtitle: We must end our reputation as a party for old men by increasing funding to the youth organizations. -1 resources
+subtitle: We must end our reputation as a party for old men by increasing funding to the Windthorstbund, our Catholic youth organization. -1 resources
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if resources <= 0 : Not enough resources. ?]
 choose-if: advisor_action_timer = 0 and resources > 0
 on-arrival: advisor_action_timer = 6; resources -= 1; left_labor_strength += 5; left_labor_dissent -= 3; rb_strength += 50; rb_militancy += 0.025; catholics_z += 3*(1-dissent); 
 
-
+Our new youth members flock to the left wing of the party, and also bring new radicalism to the Reichsbanner.
 
 @spd_cooperation
 title: Cooperation with the SPD
