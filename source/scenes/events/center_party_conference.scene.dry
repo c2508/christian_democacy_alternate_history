@@ -40,6 +40,7 @@ view-if: not (spd_relation >= 67 and left_labor_strength >= right_strength and l
 unavailable-subtitle: [? if z_relation <= 62 : Our relations are not good enough. ?] [? if resources < 1 : We do not have enough resources. ?]
 subtitle: The vote is deadlocked between Adam Stegerwald and Joseph Joos. 
 on-arrival: resources -= 1; z_party_leader = "Kaas"; spd_relations -= 5; prussian_concordat_progress += 1
+face-image: img/portraits/Ludwig_Kaas.jpg
 
 Ludwig Kaas has been selected as the chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] as a compromise candidate between Stegerwald and Joos. He seems to represent a rightward turn from Marx, and will preside over a [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] less inclined to compromise with the left. 
 
