@@ -68,7 +68,7 @@ However, given the influence of the DVP among the other right-leaning parties[? 
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; ddp_relation += 8(1 - dissent)
+on-arrival: resources -= 1; ddp_relation += 8*(1 - dissent)
 go-to: ddp_moribund if year > 1930
 
 The [+ ddp_name +] has been one of our closest allies through the course of the Republic
