@@ -30,6 +30,7 @@ unavailable-subtitle: [? if right_dissent <= 15 and right_labor_dissent <= 15 an
 subtitle: Joos belongs to the left labor faction and is friendly with the SPD. 
 choose-if: spd_relation >= 67 and left_labor_strength >= right_strength and left_labor_strength >= right_labor_strength and not right_dissent <= 15 and right_labor_dissent <= 15 and right_labor_strength >= 30
 on-arrival: z_party_leader = "Joos"; catholics_spd += 5; workers_z += 3; z_party_leader1 += 1
+face-image: img/portraits/Joseph_Joos.jpg
 
 With our strong grassroots connections with the SPD, they have been able to influence the Center delegates to support Joseph Joos as the new Center chairman. He has long been a friend of the SPD, and will be more inclined to collaborate with the SPD compared to Stegerwald. He also increases the appeal of the Center Party to the working class.
 
