@@ -21,7 +21,7 @@ The party has splintered in two over the vote to decide his sucessor. The curren
 unavailable-subtitle: [? if right_dissent > 15: There is too much infighting amongst the right wing of the party. ?][? if right__labor_dissent > 15: There is too much infighting amongst the right labor faction. ?][? if right_strength < 30: The right labor faction is too weak. ?] 
 subtitle: Stegerwald belongs to the right labor faction and would rather work with the political right than the SPD.
 on-arrival: z_party_leader = "Stegerwald"; spd_relation -= 5; dnvp_relation += 5
-choose-if: right_dissent <= 15; right_labor_dissent <= 15; right_labor_strength >= 30
+choose-if: right_dissent < 15; right_labor_dissent < 15; right_labor_strength > 30
 
 Adam Stegerwald has been elected as the chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. He seems to represent a rightward turn from Marx, despite his trade union background, and will preside over a [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] less inclined to compromise with the left. He views the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] as a prototype for a <span style="color: #000000;">Christian</span>, <span style="color: #586593;">democratic</span>, <span style="color: #000000;">German</span>, and <span style="color: #c00000;">social</span> party, and aims to transform it according to the principles laid out in his proposed "Essen program" eight years prior. 
 
