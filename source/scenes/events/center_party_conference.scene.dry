@@ -20,7 +20,7 @@ The party has splintered in two over the vote to decide his sucessor. The curren
 @stegerwald
 unavailable-subtitle: [? if right_dissent > 15: There is too much infighting amongst the right wing of the party. ?][? if right__labor_dissent > 15: There is too much infighting amongst the right labor faction. ?][? if right_strength < 30: The right labor faction is too weak. ?] 
 subtitle: Stegerwald belongs to the right labor faction and would rather work with the political right than the SPD.
-on-arrival: z_party_leader = "Stegerwald"; spd_relation -= 5; dnvp_relation += 5; z_party_leader += 1
+on-arrival: z_party_leader = "Stegerwald"; spd_relation -= 5; dnvp_relation += 5; 
 choose-if: right_dissent <= 15 and right_labor_dissent <= 15 and right_labor_strength >= 30
 
 Adam Stegerwald has been elected as the chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. He seems to represent a rightward turn from Marx, despite his trade union background, and will preside over a [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] less inclined to compromise with the left. He views the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] as a prototype for a <span style="color: #000000;">Christian</span>, <span style="color: #586593;">democratic</span>, <span style="color: #000000;">German</span>, and <span style="color: #c00000;">social</span> party, and aims to transform it according to the principles laid out in his proposed "Essen program" eight years prior. 
@@ -34,8 +34,8 @@ on-arrival: z_party_leader = "Joos"; catholics_spd += 5; workers_z += 3; z_party
 With our strong grassroots connections with the SPD, they have been able to influence the Center delegates to support Joseph Joos as the new Center chairman. He has long been a friend of the SPD, and will be more inclined to collaborate with the SPD compared to Stegerwald. He also increases the appeal of the Center Party to the working class.
 
 @kaas
-choose-if: z_party_leader == 0; z_party_leader1 == 0
-view-if: z_party_leader == 0; z_party_leader1 == 0
+choose-if: z_party_leader = 0
+view-if: z_party_leader = 0
 unavailable-subtitle: [? if z_relation <= 62 : Our relations are not good enough. ?] [? if resources < 1 : We do not have enough resources. ?]
 subtitle: The vote is deadlocked between Adam Stegerwald and Joseph Joos. 
 on-arrival: resources -= 1; z_party_leader = "Kaas"; spd_relations -= 5; prussian_concordat_progress += 1
