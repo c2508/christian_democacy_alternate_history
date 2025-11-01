@@ -1,7 +1,7 @@
 title: Andreas Hermes
 is-pinned-card: true
 tags: advisor, right
-card-image: img/portraits/HermesAndreas.jpg
+card-image: img/portraits/HermesAndreas.jfif
 view-if: hermes_advisor = 1
 new-page: true 
 
