@@ -34,13 +34,13 @@ on-arrival: advisor_action_timer = 6; resources -= 1; left_labor_strength += 5; 
 Our new youth members flock to the left wing of the party, and also bring new radicalism to the Reichsbanner.
 
 @spd_cooperation
-title: Cooperation with the SPD
-subtitle: Could we build closer ties with the SPD?
+title: Cooperation with the <span style="color: #c00000;">**SPD**</span>
+subtitle: Could we build closer ties with the <span style="color: #c00000;">**SPD**</span>?
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_labor_strength += 2; spd_relation += 4*(1-dissent); right_dissent += 2; right_labor_dissent +=1 
 
-Joos works towards closer ties with the SPD through his labor connections.
+Joos works towards closer ties with the <span style="color: #c00000;">**SPD**</span> through his labor connections.
 
 
 
