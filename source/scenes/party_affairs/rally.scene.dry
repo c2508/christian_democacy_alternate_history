@@ -70,9 +70,9 @@ The SA have won this show of strength.
 
 @main_rally
 
-Mass rallies are a common feature of social democratic life, especially in the lead-up to an election. What is the primary theme of this rally?
+Mass rallies are a common feature of christian democratic life, especially in the lead-up to an election. What is the primary theme of this rally?
 
-- @class_struggle: The class struggle of the proletariat against the bourgeoisie.
+- @republic: Upholding the republic against the reactionary right
 - @welfare: Sozialpolitik - the maintenance and expansion of social welfare programs.
 - @democracy: Expanding our nascent democracy and defending it against dictatorship and fascism.
 - @pacifism: Opposing war, nationalism, and militarism at all costs.
@@ -80,10 +80,10 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @local: A mixture of various local and national concerns that resonate most with the audience.
 - @easy_discard
 
-@class_struggle
-on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if left_strength > reformist_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2;
+@republic
+on-arrival: workers_z += 4*(1-dissent); catholics_z += 3*(1-dissent) if left_labor_strength > right_strength; workers_z += 4*(1-dissent) if democratization >= 3; unemployed_spd += 3*(1-dissent) if democratization >= 3; left__labor_strength += 5; left__labor_dissent -= 5
 
-Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
+Our message of republicanism appeals to the left labor wing of the party. [? if democratization >= 3 : Our achievements in upholding the republic have assisted our messaging. ?]
 
 @welfare
 on-arrival: workers_spd += 3*(1-dissent); workers_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labor_strength += 4; reformist_dissent -= 3; labor_dissent -= 3;
