@@ -1,7 +1,7 @@
 title: Confronting Antisemitism
 new-page: true
 is-card: true
-view-if: iron_front_formed == 1 and nazi_urgency >= 3
+view-if: year >= 1930 and nazi_r >= 15
 on-arrival: confronting_antisemitism += 1; month_actions += 1
 card-image: img/iron_front.png
 tags: party_affairs, antifascism
@@ -9,21 +9,23 @@ max-visits: 1
 
 = Confronting Antisemitism
 
-Antisemitism has long been a latent feature of German society, but since the beginning of the economic depression, it has grown to a horrifying extent. The Nazis are the worst of it, but all the right-wing parties are deeply antisemitic. Regarding the SPD specifically, our right-wing enemies love to deploy their racist rhetoric against our many Jewish comrades, magnifying criticism of any minor transgression, and they call the entire SPD a Jewish party. We are a favorite target of their invectives.
+Antisemitism has long been a latent feature of German society, but since the beginning of the economic depression, it has grown to a horrifying extent. The Nazis are the worst of it, but all the right-wing parties are deeply antisemitic. Regarding the Center Party specifically, our right-wing members love to deploy their racist rhetoric against many Jewish politicians, magnifying criticism of any minor transgression.
 
-- @socialism_of_fools: Antisemitism is the "socialism of fools". We will defeat them with real socialism.
-- @if: Antisemitism is a crisis. Direct the full force of the Iron Front against antisemitism.
+- @racist: The Jews are the ones responsible for this economic crisis. Attack them vehemently in our campaign speeches.
+- @if: Antisemitism is a crisis. Direct the full force of the Center Party against antisemitism.
 - @all: All Germans will suffer from fascism, not just the Jews. We do not need a separate policy for them.
 
-@socialism_of_fools
+@racist
+on-arrival: spd_relation -= 10; ddp_relation -=5; dvp_relation +=3; dnvp_relation +=5 ;right_strength +=5; right_dissent -=3
 
-The best policy to deal with this sort of irrational, senseless hatred is to ignore it. Few are swayed by racist rhetoric; the best way to combat it is to provide economic security so that people do not turn to antisemitism.
+Judeobolshevism has permeated every corner of our society. We must cooperate with the right wing parties to keep the socialists out of power.
 
 @if
-on-arrival: confronting_antisemitism += 2; sa_strength -= 20; democratization += 1; pacifism += 1; nationalism -= 5*(1-dissent); workers_nsdap -= 6*(1-dissent);
+on-arrival: confronting_antisemitism += 2; sa_strength -= 20; democratization += 1; pacifism += 1; nationalism -= 5*(1-dissent); workers_nsdap -= 6*(1-dissent); right_dissent +=5; right_strength +=3
 
-We develop an entire campaign against antisemitism under the auspices of the Iron Front. Hopefully our campaign can sway the workers away from Nazism.
+We develop an entire campaign against antisemitism while calling for churches to condemn this kind of behaviour
 
 @all
+on-arrival: center_strength +=5
 
 We do not need any special treatment for minorities.
