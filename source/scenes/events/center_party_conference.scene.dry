@@ -30,7 +30,7 @@ unavailable-subtitle: [? if right_dissent <= 15 and right_labor_dissent <= 15 an
 subtitle: Joos belongs to the left labor faction and is friendly with the SPD. 
 choose-if: spd_relation >= 67 and left_labor_strength >= right_strength and left_labor_strength >= right_labor_strength and not (right_dissent <= 15 and right_labor_dissent <= 15 and right_labor_strength >= 30)
 on-arrival: z_party_leader = "Joos"; catholics_spd += 5; workers_z += 3; z_party_leader1 += 1
-face-image: img/portraits/Joseph_Joos.jpg
+face-image: img/portraits/JoosJoseph.jpg
 
 With our strong grassroots connections with the SPD, they have been able to influence the Center delegates to support Joseph Joos as the new Center chairman. He has long been a friend of the SPD, and will be more inclined to collaborate with the SPD compared to Stegerwald. He also increases the appeal of the Center Party to the working class.
 
@@ -40,7 +40,7 @@ view-if: not (spd_relation >= 67 and left_labor_strength >= right_strength and l
 unavailable-subtitle: [? if z_relation <= 62 : Our relations are not good enough. ?] [? if resources < 1 : We do not have enough resources. ?]
 subtitle: The vote is deadlocked between Adam Stegerwald and Joseph Joos. 
 on-arrival: resources -= 1; z_party_leader = "Kaas"; spd_relations -= 5; prussian_concordat_progress += 1
-face-image: img/portraits/Ludwig_Kaas.jpg
+face-image: img/portraits/KaasLudwig.jpg
 
 Ludwig Kaas has been selected as the chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] as a compromise candidate between Stegerwald and Joos. He seems to represent a rightward turn from Marx, and will preside over a [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] less inclined to compromise with the left. 
 
