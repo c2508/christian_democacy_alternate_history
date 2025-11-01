@@ -7,7 +7,7 @@ view-if: wirth_advisor = 1
 
 = Joseph Wirth
 
-Wirth is a former chancellor and figure of the Zentrum's left wing who has been devotedly republican, to the extent of angering his former party members. He is a strong supporter of maintaining democracy and cooperation with the SPD.
+Wirth is a former chancellor and figure of the Zentrum's left wing who has been devotedly republican, to the extent of angering his former party members. He is a strong supporter of maintaining democracy and cooperation with the <span style="color: #c00000;">**SPD**</span>.
 
 - @spd_cooperation
 - @build_reichsbanner
@@ -16,13 +16,13 @@ Wirth is a former chancellor and figure of the Zentrum's left wing who has been 
 - @root: Return to main
 
 @spd_cooperation
-title: Cooperation with the SPD
-subtitle: Push the party to be more friendly towards the SPD.
+title: Cooperation with the <span style="color: #c00000;">**SPD**</span>
+subtitle: Push the party to be more friendly towards the <span style="color: #c00000;">**SPD**</span>.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_labor_strength += 5; spd_relation += 5*(1-dissent); right_dissent += 5; right_labor_dissent +=3; left_labor_dissent -= 1
 
-Wirth was in the SPD before and is able to use his close ties with SPD members to deepen cooperation between both parties. 
+Wirth was in the SPD before and is able to use his close ties with <span style="color: #c00000;">**SPD**</span> members to deepen cooperation between both parties. 
 
 @build_reichsbanner
 title: Reichsbanner
